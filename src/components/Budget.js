@@ -43,8 +43,16 @@ const Budget = () => {
   };
 
   return (
-    <div className="alert alert-secondary">
-      <span>Budget: </span>
+    <div
+      className="alert alert-secondary"
+      style={{
+        display: "flex",
+        gap: "10px",
+        alignItems: "center",
+        width: "400px",
+      }}
+    >
+      <span>Budget: {currency}</span>
       <input
         type="number"
         step="10"
