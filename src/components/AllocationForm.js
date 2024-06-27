@@ -27,6 +27,12 @@ const AllocationForm = (props) => {
                 });
             }
     };
+
+    const handleKeyDown = (event) => {
+        if (event.key === 'e' || event.key === 'E' || event.key === '+' || event.key === '-') {
+            event.preventDefault();
+        }
+    };
     return (
         <div>
             <div className='row'>
@@ -56,7 +62,9 @@ const AllocationForm = (props) => {
                         id='cost'
                         value={cost}
                         style={{ marginLeft: '2rem' , size: 10}}
-                        onChange={(event) => setCost(event.target.value)}>
+                        onChange={(event) => setCost(event.target.value)}
+                        onKeyDown={handleKeyDown}
+                        >
                         </input>
                     <button className="btn btn-primary" onClick={submitEvent} style={{ marginLeft: '2rem' }}>
                         Save
